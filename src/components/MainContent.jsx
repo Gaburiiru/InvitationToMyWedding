@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from "react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faHeart } from "@fortawesome/free-regular-svg-icons";
+import assets from "../assets/assets.js";
 
 const MainContent = () => {
   const [showDate, setShowDate] = useState(false);
@@ -50,64 +51,91 @@ const MainContent = () => {
 
       <section
         id="ubicacion"
-        className="min-h-screen flex items-center justify-center bg-green-100"
+        className="min-h-screen flex items-center justify-center bg-green-200"
       >
-        <div className="container flex flex-col text-center">
-          <h2>
-            <b>CEREMONIA Y FIESTA</b>
+        <div className="container flex flex-col text-center space-y-4 mx-4">
+          <div className="flex justify-center mb-4">
+            <img src={assets.anillos} alt="anillos" className="w-24 mx-auto" />
+          </div>
+
+          <h2 className="text-lg font-semibold tracking-widest text-gray-800">
+            CEREMONIA Y FIESTA
           </h2>
-          <p>
+
+          <p className="italic text-gray-600">
             “Uno solo puede ser vencido, pero dos pueden resistir. ¡La cuerda de
             tres hilos no se rompe fácilmente!”
           </p>
-          <p>Eclesiastés 4:12 NVI</p>
-          <p>
+          <p className="italic text-gray-600">Eclesiastés 4:12 NVI</p>
+
+          <p className="text-gray-800">
             Estamos muy felices y queremos compartir este momento con ustedes.
-            Los invitamos a nuestra fiesta de casamiento el día Sabado 8 de
+            Los invitamos a nuestra fiesta de casamiento el día Sábado 8 de
             febrero a las 19hs en
           </p>
-          <b>LA QUINTA "LOS PINOS"</b>
-          <p>Alejandro de Manzoni 2140, Virrey del Pino - Km 35</p>
+
+          <p className="font-semibold text-lg text-gray-800">
+            LA QUINTA "LOS PINOS"
+          </p>
+
+          <p className="text-gray-700">
+            Alejandro de Manzoni 2140, Virrey del Pino - Km 35
+          </p>
+
           <a
-            href="https://www.google.com/maps/place/Alejandro+de+Manzoni+2140,+B1763+Virrey+del+Pino,+Provincia+de+Buenos+Aires/@-34.8060624,-58.643202,841m/data=!3m2!1e3!4b1!4m6!3m5!1s0x95bcc4a956f900b5:0xeb7809e9610c5a9!8m2!3d-34.8060668!4d-58.6406217!16s%2Fg%2F11h4b__qh5?authuser=0&entry=ttu&g_ep=EgoyMDI0MDgyMS4wIKXMDSoASAFQAw%3D%3D"
+            href="https://www.google.com/maps/place/Alejandro+de+Manzoni+2140,+B1763+Virrey+del+Pino,+Provincia+de+Buenos+Aires"
             target="_blank"
             rel="noopener noreferrer"
-            className="bg-blue-500 text-white px-4 py-2 rounded"
+            className="bg-teal-500 hover:bg-teal-600 text-white px-6 py-3 rounded-full font-semibold shadow-md transition duration-300 ease-in-out mx-auto"
           >
             Cómo llegar
           </a>
-          <p>
-            No olviden <a href="#asistencia">confirmar su presencia</a> al final
-            de la invitación.
+
+          {/* Recordatorio de asistencia */}
+          <p className="text-gray-800">
+            No olviden{" "}
+            <a href="#asistencia" className="font-semibold underline">
+              confirmar su presencia
+            </a>{" "}
+            al final de la invitación.
           </p>
         </div>
       </section>
 
       <section
         id="regalo"
-        className="min-h-screen flex items-center justify-center bg-yellow-100"
+        className="min-h-screen flex items-center justify-center bg-yellow-200"
       >
-        <div className="text-center">
-          <h2 className="text-3xl mb-4">REGALO</h2>
-          <p>
-            Su presencia en nuestra boda es el mejor regalo pero si desean
+        <div className="text-center space-y-4 mx-4">
+          <div className="flex justify-center mb-4">
+            <img src={assets.regalo} alt="regalo" className="w-20 mx-auto" />
+          </div>
+
+          <h2 className="text-lg font-semibold tracking-widest text-gray-800">
+            REGALO
+          </h2>
+
+          <p className="text-gray-800">
+            Su presencia en nuestra boda es el mejor regalo, pero si desean
             colaborar con nuestra <b>Luna de Miel</b> o ayudarnos a terminar
-            nuestro futuro <b>Hogar</b> pueden hacerlo a través de esta cuenta:
+            nuestro futuro <b>Hogar</b>, pueden hacerlo a través de esta cuenta:
           </p>
+
           <button
             onClick={() => setShowCVU(!showCVU)}
-            className="bg-blue-500 text-white px-4 py-2 rounded my-4"
+            className="bg-teal-500 hover:bg-teal-600 text-white px-6 py-3 rounded-full font-semibold shadow-md transition duration-300 ease-in-out"
           >
             {showCVU ? "Ocultar CVU" : "Mostrar CVU"}
           </button>
+
           {showCVU && (
-            <div>
-              <p>Banco saraza</p>
-              <p>Nro de Cuenta: 00000000</p>
-              <p>Cbu: 00000000000000</p>
+            <div className="mt-4 text-gray-800 space-y-2">
+              <p>Banco Saraza</p>
+              <p>Número de Cuenta: 00000000</p>
+              <p>CBU: 00000000000000</p>
               <p>Alias: saraza.saraza.saraza</p>
               <p>Titular: Gabriel Alejandro Ricardes</p>
-              <p className="mt-2">¡Muchas Gracias!</p>
+              <p className="mt-2 font-semibold">¡Muchas Gracias!</p>
             </div>
           )}
         </div>
@@ -115,18 +143,27 @@ const MainContent = () => {
 
       <section
         id="asistencia"
-        className="min-h-screen flex items-center justify-center bg-red-100"
+        className="min-h-screen flex items-center justify-center bg-red-200"
       >
-        <div className="text-center">
-          <h2 className="text-3xl mb-4">Asistencia</h2>
-          <a
-            href="https://forms.gle/your-google-form-link"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="bg-blue-500 text-white px-4 py-2 rounded"
+        <div className=" text-center space-y-6 text-white">
+          <h2 className="uppercase text-4xl font-bold">LOS ESPERAMOS</h2>
+
+          <p className="text-lg">
+            Por favor confirmar asistencia por este medio. ¡Gracias!
+          </p>
+
+          <button
+            onClick={() => setShowCVU(!showCVU)}
+            className="bg-teal-500 hover:bg-teal-600 text-white px-6 py-3 rounded-full font-semibold shadow-md transition duration-300 ease-in-out"
           >
-            Ir al Formulario
-          </a>
+            <a
+              href="https://forms.gle/your--form-link"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              Confirmar asistencia
+            </a>
+          </button>
         </div>
       </section>
     </div>
