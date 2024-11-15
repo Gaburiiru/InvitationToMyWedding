@@ -16,16 +16,16 @@ const Header = () => {
   }, []);
 
   return (
-    <header className="fixed top-0 w-full bg-gray-800 text-white p-4 flex justify-between items-center">
+    <header className="fixed top-0 w-full bg-gray-600 text-white p-4 flex justify-between items-center  z-50">
       <div className="flex space-x-4">
         <a href="#ubicacion">
-          Ubicación
+          ubicación
         </a>
         <a href="#regalo">
-          Regalo
+          regalo
         </a>
         <a href="#asistencia">
-          Asistencia
+          asistencia
         </a>
       </div>
       {showDate && (
